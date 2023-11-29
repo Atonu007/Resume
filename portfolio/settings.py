@@ -17,6 +17,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -26,7 +28,7 @@ SECRET_KEY = 'django-insecure-2mlz9hv%zbuvs2mnv(hq(+ifzmh(!8n(=5^#jso2y%x-+ba)+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -89,6 +91,8 @@ DATABASES = {
         'PORT': '5432',         
     }
 }
+
+
 
 
 # Password validation
