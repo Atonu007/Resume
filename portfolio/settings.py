@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,17 +82,37 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+# import dj-database-url
+# # DATABASES = {
+# #     'default': {
+# #         'ENGINE': 'django.db.backends.postgresql',
+# #         'NAME': 'portfolio_byoi',
+# #         'USER': 'portfolio_byoi_user',
+# #         'PASSWORD': 'OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs',
+# #         'HOST': 'dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com',
+# #         'PORT': '5432',
+# #     }
+# # }
 
+# DATABASES = {
+# 	"default": dj_database_url.parse(os.environ.get("postgres://portfolio_byoi_user:OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs@dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com/portfolio_byoi"))
+# }
+
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': '1217630364a!',
-        'HOST': 'localhost',    
-        'PORT': '5432',         
-    }
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgres://portfolio_byoi_user:OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs@dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com/portfolio_byoi',
+        conn_max_age=600
+    )
 }
+
+# db_url = os.environ.get("postgres://portfolio_byoi_user:OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs@dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com/portfolio_byoi")
+
+# DATABASES = {
+#     "default": dj_database_url.parse(db_url),
+# }
+
 
 
 
