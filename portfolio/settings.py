@@ -82,21 +82,19 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# import dj-database-url
-# # DATABASES = {
-# #     'default': {
-# #         'ENGINE': 'django.db.backends.postgresql',
-# #         'NAME': 'portfolio_byoi',
-# #         'USER': 'portfolio_byoi_user',
-# #         'PASSWORD': 'OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs',
-# #         'HOST': 'dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com',
-# #         'PORT': '5432',
-# #     }
-# # }
 
 # DATABASES = {
-# 	"default": dj_database_url.parse(os.environ.get("postgres://portfolio_byoi_user:OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs@dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com/portfolio_byoi"))
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio_byoi',
+#         'USER': 'portfolio_byoi_user',
+#         'PASSWORD': 'OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs',
+#         'HOST': 'dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com',
+#         'PORT': '5432',
+#     }
 # }
+
+
 
 import dj_database_url
 DATABASES = {
@@ -107,11 +105,7 @@ DATABASES = {
     )
 }
 
-# db_url = os.environ.get("postgres://portfolio_byoi_user:OcSyMVW1ILUEScOWbA2PTYOMPHTXDTBs@dpg-clj1s31e313s73ajt0b0-a.singapore-postgres.render.com/portfolio_byoi")
 
-# DATABASES = {
-#     "default": dj_database_url.parse(db_url),
-# }
 
 
 
